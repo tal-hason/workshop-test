@@ -14,10 +14,8 @@ spec:
     spec:
       containers:
         - resources: {}
-          readinessProbe: ''
           terminationMessagePath: /dev/termination-log
           name: hello-world
-          livenessProbe: ''
           ports:
             - containerPort: 8080
               protocol: TCP
