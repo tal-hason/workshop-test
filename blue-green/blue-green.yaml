@@ -5,6 +5,7 @@ metadata:
   annotations:
     haproxy.router.openshift.io/balance: roundrobin
 spec:
+  to:
   alternateBackends:
   - kind: Service
     name: user1-hello-world
