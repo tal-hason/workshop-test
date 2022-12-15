@@ -20,7 +20,7 @@ spec:
             - containerPort: 8080
               protocol: TCP
           imagePullPolicy: IfNotPresent
-          image: 'quay.io/argo-helm-workshop/workshop-app:v1'
+          image: 'quay.io/argo-helm-workshop/workshop-app:v2'
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
   strategy:
