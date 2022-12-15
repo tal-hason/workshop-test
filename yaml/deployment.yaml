@@ -3,7 +3,7 @@ apiVersion: apps/v1
 metadata:
   name: user1-hello-world
 spec:
-  replicas: 0
+  replicas: 3
   selector:
     matchLabels:
       app: user1-hello-world
