@@ -12,6 +12,11 @@ spec:
       labels:
         app: {{ .Release.Name }}
     spec:
+      volumes:
+        - name: index-html
+          configMap:
+            name: index.html
+            defaultMode: 420
       containers:
         - resources: {}
           terminationMessagePath: /dev/termination-log
@@ -21,6 +26,9 @@ spec:
               protocol: TCP
           imagePullPolicy: Always
           image: {{ .Values.containers.image }}:{{ .Values.containers.tag }}
+          volumeMounts:
+          - name: index-html
+            mountPath: /tmp/html
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
   strategy:
