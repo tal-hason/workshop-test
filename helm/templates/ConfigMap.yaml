@@ -42,7 +42,7 @@ data:
         </div>
         <div class="jumbotron"  style="padding:40px;">
           <img src="https://developers.redhat.com/sites/default/files/styles/article_feature/public/blog/2018/05/openshift-featured.png?   itok=g0Ee8H1H" alt="OpenShift">
-          <img src="https://raw.githubusercontent.com/rhilconsultants/Application-Deployment-Workshop/main/Class%20artifacts/helm-icon-color.png" alt="HELM">
+          <img src="https://raw.githubusercontent.com/rhilconsultants/Application-Deployment-Workshop/main/Class%20artifacts/helm-icon-color.png" itok=g0Ee8H1H" alt="HELM">
         </div>
       </div>
     </body>
