@@ -22,7 +22,7 @@ spec:
           livenessProbe:
             httpGet:
               path: /health/liveliness
-              port: {{ .Values.containers.containerPort }}
+              port: {{ .Values.containers.containerPort | quote }}
               scheme: HTTP
             initialDelaySeconds: 1
             timeoutSeconds: 1
@@ -42,7 +42,7 @@ spec:
           terminationMessagePath: /dev/termination-log
           name: {{ .Release.Name }}
           ports:
-            - containerPort: {{ .Values.containers.containerPort | quote }}
+            - containerPort: {{ .Values.containers.containerPort }}
               protocol: TCP
           imagePullPolicy: Always
           image: {{ .Values.containers.image }}:{{ .Values.containers.tag }}
