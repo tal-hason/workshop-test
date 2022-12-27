@@ -48,7 +48,7 @@ spec:
           image: {{ .Values.containers.image }}:{{ .Values.containers.tag }}
           env:
             - name: PORT
-              value: {{ .Values.containers.containerPort }}
+              value: {{ .Values.containers.containerPort | quote }}
           volumeMounts:
           - name: index-html
             mountPath: /tmp/html
