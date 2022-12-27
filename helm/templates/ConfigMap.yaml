@@ -4,4 +4,4 @@ metadata:
   name: index.html
 immutable: false
 data:
-{{ (.Files.Glob "../../src/html/*").AsConfig | indent 2 }}
+{{ (.Files.Glob "/src/html/*").AsConfig | indent 2 }}
