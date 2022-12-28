@@ -3,7 +3,8 @@ apiVersion: apps/v1
 metadata:
   name: {{ .Release.Name }}
   annotations:
-    rollme: {{ randAlphaNum 5 | quote }}
+    checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
+#    rollme: {{ randAlphaNum 5 | quote }}  sulotion for l3 p1 t 2
 spec:
   replicas: {{ .Values.ReplicaNumber }}
   selector:
