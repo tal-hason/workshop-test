@@ -6,6 +6,7 @@ metadata:
     argocd.argoproj.io/sync-wave: "10"
 spec:
   replicas: {{ .Values.ReplicaNumber }}
+  selector:
   template:
     metadata:
       annotations:
