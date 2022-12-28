@@ -3,5 +3,4 @@ kind: ConfigMap
 metadata:
   name: issue-message
 data:
-  ISSUE_TITLE: {{ .Values.issue.title }}
-  ISSUE_BODY: {{ .Values.issue.body }}
+{{ (.Files.Glob "issue/*").AsConfig | indent 2 }}
