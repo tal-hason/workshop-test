@@ -23,4 +23,4 @@ spec:
          - name: PORT
            value: "{{ .Values.service.servicePort }}"
          - name: TEST
-           value: "{{ .Values.test | quote }}"
+           value: "{{ .Values.test }}"
