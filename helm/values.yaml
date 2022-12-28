@@ -27,3 +27,5 @@ probes:
 volume:
   mount:
     path: /tmp/html
+
+test: ArgoCD SyncHooks Test
