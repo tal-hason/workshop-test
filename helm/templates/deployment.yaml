@@ -2,15 +2,16 @@ kind: Deployment
 apiVersion: apps/v1
 metadata:
   name: {{ .Release.Name }}
-  annotations:
-    checksum/config: {{ include (print $.Template.BasePath "/ConfigMap.yaml") . | sha256sum }}
-#    rollme: {{ randAlphaNum 5 | quote }}  sulotion for l3 p1 t 2
 spec:
   replicas: {{ .Values.ReplicaNumber }}
   selector:
     matchLabels:
       app: {{ .Release.Name }}
   template:
+    annotations:
+      checksum/config: {{ include (print $.Template.BasePath "/ConfigMap.yaml") . | sha256sum }}
+#      rollme: {{ randAlphaNum 5 | quote }}  sulotion for l3 p1 t 2
+
     metadata:
       labels:
         app: {{ .Release.Name }}
