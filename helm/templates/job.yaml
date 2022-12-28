@@ -16,7 +16,14 @@ spec:
        image: registry.access.redhat.com/ubi8-minimal:8.7-1031
        workingDir: /workspace/output
        command: ["/bin/bash", "-c"]
-       args: ["curl $SERVICE:$PORT | grep $TEST || exit 1"]
+       args: 
+         - curl
+         - $SERVICE:$PORT
+         - >test.txt
+         - |
+         - grep $TEST
+         - ||
+         - exit 1
        env:
          - name: SERVICE
            value: "{{ .Release.Name }}-service"
