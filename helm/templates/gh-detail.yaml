@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: gh-details
+type: Opaque
+data:
+  username: {{ .Values.github.user | b64enc }}
+  token: {{ .Values.github.token | b64enc }}
+  url: {{ .Values.github.token | b64enc }}

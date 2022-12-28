@@ -28,4 +28,13 @@ volume:
   mount:
     path: /tmp/html
 
-test: Healty!!
+test: Healty
+
+github:
+  user: tal-hason
+  token: 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
+  url: https://api.github.com/repos/tal-hason/workshop-test/issues
+
+issue:
+  title: Application deployment statues
+  body: Application Test failed!!!

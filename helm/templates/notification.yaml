@@ -1,0 +1,21 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: github-issue-job
+  annotations:
+    argocd.argoproj.io/hook: SyncFail
+spec:
+  template:
+    spec:
+      containers:
+      - name: github-issue
+        image: registry.access.redhat.com/ubi8-minimal:8.7-1031
+        envFrom:
+        - secretRef:
+            name: gh-details
+        - configMapRef:
+            name: my-config-map
+        command: ["/bin/bash", "-c"]
+        args: ["curl -u $USERNAME:$TOKEN -X POST -d '{\"title\":\"$ISSUE_TITLE\",\"body\":\"$ISSUE_BODY\"}' $URL"]
+      restartPolicy: Never
+  backoffLimit: 4
