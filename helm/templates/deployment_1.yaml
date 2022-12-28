@@ -3,7 +3,7 @@ apiVersion: apps/v1
 metadata:
   name: {{ .Release.Name }}-1
   annotations:
-    argocd.argoproj.io/sync-wave: "10"
+    argocd.argoproj.io/sync-wave: "5"
 spec:
   replicas: {{ .Values.ReplicaNumber }}
   selector:
