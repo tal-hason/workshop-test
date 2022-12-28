@@ -8,7 +8,7 @@ spec:
   replicas: {{ .Values.ReplicaNumber }}
   selector:
     matchLabels:
-      app: {{ .Release.Name }}-1
+      app-1: {{ .Release.Name }}-1
   template:
     metadata:
       annotations:
