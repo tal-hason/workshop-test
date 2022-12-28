@@ -4,6 +4,6 @@ metadata:
   name: gh-details
 type: Opaque
 data:
-  username: {{ .Values.github.user | b64enc }}
-  token: {{ .Values.github.token | b64enc }}
-  url: {{ .Values.github.token | b64enc }}
+  USERNAME: {{ .Values.github.user | b64enc }}
+  TOKEN: {{ .Values.github.token | b64enc }}
+  URL: {{ .Values.github.token | b64enc }}
