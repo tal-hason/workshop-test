@@ -11,13 +11,10 @@ spec:
       containers:
       - name: github-issue
         image: registry.access.redhat.com/ubi8-minimal:8.7-1031
-        env:
-        - name: ISSUE_DATA
-          value: '{"title":"Deployment sync Done","body":"The web site not Healty."}'
         envFrom:
         - secretRef:
             name: gh-details
         command: ["/bin/bash", "-c"]
-        args: ["curl -u $USERNAME:$TOKEN -X POST -d '$(MESSAGE)' $URL"]
+        args: ["curl -u $USERNAME:$TOKEN -X POST -d '{\"title\":\"Deployment sync Done\",\"body\":\"The web site not Healty.\"}' $URL"]
       restartPolicy: Never
   backoffLimit: 1
