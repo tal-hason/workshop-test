@@ -8,5 +8,5 @@ spec:
       port: {{ .Values.service.servicePort }}
       targetPort: {{ .Values.containers.containerPort }}
   selector:
-    app: {{ .Release.Name }}-1
-    app: {{ .Release.Name }}-2
+    app: "{{ .Release.Name }}-1"
+    app: "{{ .Release.Name }}-2"
