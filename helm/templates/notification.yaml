@@ -17,6 +17,6 @@ spec:
         - configMapRef:
             name: issue-message
         command: ["/bin/bash", "-c"]
-        args: ["curl -u $USERNAME:$TOKEN -X POST -d '{\"title\":\"$ISSUE_TITLE\",\"body\":\"$ISSUE_BODY\"}' $URL"]
+        args: ["curl -u $USERNAME:$TOKEN -X POST -d '{\"title\":\"$ISSUE_TITLE\",\"body\":\"$ISSUE_BODY\"}' https://api.github.com/repos/tal-hason/workshop-test/issues"]
       restartPolicy: Never
   backoffLimit: 4
