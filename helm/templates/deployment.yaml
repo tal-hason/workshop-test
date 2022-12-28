@@ -51,7 +51,7 @@ spec:
               value: {{ .Values.containers.containerPort | quote }}
           volumeMounts:
           - name: index-html
-            mountPath: {{ Values.volume.mount.path }}
+            mountPath: {{ .Values.volume.mount.path }}
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
   strategy:
