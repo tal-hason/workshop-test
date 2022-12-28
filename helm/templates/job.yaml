@@ -5,7 +5,6 @@ metadata:
     argocd.argoproj.io/hook: PostSync
     argocd.argoproj.io/hook-delete-policy: HookSucceeded
   name: test-url
-  namespace: test
 spec:
   template:
     metadata:
