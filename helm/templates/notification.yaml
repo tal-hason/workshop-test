@@ -4,6 +4,7 @@ metadata:
   name: github-issue-job
   annotations:
     argocd.argoproj.io/hook: SyncFail
+    argocd.argoproj.io/hook-delete-policy: BeforeHookCreation
 spec:
   template:
     spec:
