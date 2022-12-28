@@ -19,9 +19,13 @@ spec:
        args: 
          - curl
          - $SERVICE:$PORT
-         - >test.txt
+         - >
+         - test.txt
          - |
-         - grep $TEST
+         - cat
+         - test.txt
+         - grep
+         - $TEST
          - ||
          - exit 1
        env:
