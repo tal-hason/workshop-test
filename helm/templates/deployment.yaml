@@ -11,7 +11,6 @@ spec:
     annotations:
       checksum/config: {{ include (print $.Template.BasePath "/ConfigMap.yaml") . | sha256sum }}
 #      rollme: {{ randAlphaNum 5 | quote }}  sulotion for l3 p1 t 2
-
     metadata:
       labels:
         app: {{ .Release.Name }}
