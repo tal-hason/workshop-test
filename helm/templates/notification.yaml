@@ -11,12 +11,17 @@ spec:
       containers:
       - name: github-issue
         image: registry.access.redhat.com/ubi8-minimal:8.7-1031
+        env:
+          - name: MESSAGE
+            valueFrom:
+              configMapKeyRef:
+                name: issue-message
+                key: issue.json 
+            configMapKeyRef:
         envFrom:
         - secretRef:
             name: gh-details
-        - configMapRef:
-            name: issue-message
         command: ["/bin/bash", "-c"]
-        args: ["curl -u $USERNAME:$TOKEN -X POST -d '{\"title\":\"$ISSUE_TITLE\",\"body\":\"$ISSUE_BODY\"}' $URL"]
+        args: ["curl -u $USERNAME:$TOKEN -X POST -d "$(MESSAGE)" $URL"]
       restartPolicy: Never
   backoffLimit: 4
