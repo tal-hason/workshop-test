@@ -21,6 +21,6 @@ spec:
          privileged: true
        env:
          - name: SERVICE
-           value: {{ .Release.Name }}-service
+           value: "{{ .Release.Name }}-service"
          - name: PORT
-           value: {{ .Values.service.servicePort }}
+           value: "{{ .Values.service.servicePort }}"
