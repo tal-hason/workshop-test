@@ -8,14 +8,14 @@ spec:
   replicas: {{ .Values.ReplicaNumber }}
   selector:
     matchLabels:
-      app-1: user1-hello-chart-1
+      app: {{ .Release.Name }}-1
   template:
     metadata:
       annotations:
         checksum/config: {{ include (print $.Template.BasePath "/ConfigMap.yaml") . | sha256sum }}
 #        rollme: {{ randAlphaNum 5 | quote }}  sulotion for l3 p1 t 2
       labels:
-        app-1: {{ .Release.Name }}-1
+        app: {{ .Release.Name }}-1
     spec:
       volumes:
         - name: index-html
