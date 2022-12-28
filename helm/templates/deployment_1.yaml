@@ -6,10 +6,6 @@ metadata:
     argocd.argoproj.io/sync-wave: "10"
 spec:
   replicas: {{ .Values.ReplicaNumber }}
-  # selector:
-  #   matchLabels:
-  #     app-1: {{ .Release.Name }}-1
-  template:
     metadata:
       annotations:
         checksum/config: {{ include (print $.Template.BasePath "/ConfigMap.yaml") . | sha256sum }}
