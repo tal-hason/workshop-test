@@ -21,24 +21,24 @@ spec:
         - resources: {}
           livenessProbe:
             httpGet:
-              path: /health/liveliness
+              path: {{ .Values.probes.liveness.path }}
               port: {{ .Values.containers.containerPort }}
               scheme: HTTP
-            initialDelaySeconds: 1
-            timeoutSeconds: 1
-            periodSeconds: 10
-            successThreshold: 1
-            failureThreshold: 3
+            initialDelaySeconds: {{ .Values.probes.liveness.initialDelaySeconds }}
+            timeoutSeconds: {{ .Values.probes.liveness.timeoutSeconds }}
+            periodSeconds: {{ .Values.probes.liveness.periodSeconds }}
+            successThreshold: {{ .Values.probes.liveness.successThreshold }}
+            failureThreshold: {{ .Values.probes.liveness.failureThreshold }}
           readinessProbe:
             httpGet:
-              path: /health/readiness # this check the application url path
+              path: {{ .Values.probes.readiness.path }}
               port: {{ .Values.containers.containerPort }} # In which port the Application is listening
               scheme: HTTP
-            initialDelaySeconds: 1 # the time is waiting befor testing the application path
-            timeoutSeconds: 1 # the time for timeout
-            periodSeconds: 10 # the abount of time to wait between checks
-            successThreshold: 1 # count to decalre seccessfull 
-            failureThreshold: 3 # count to decalre failure           
+            initialDelaySeconds: {{ .Values.probes.readiness.initialDelaySeconds }}
+            timeoutSeconds: {{ .Values.probes.readiness.timeoutSeconds }}
+            periodSeconds: {{ .Values.probes.readiness.periodSeconds }}
+            successThreshold: {{ .Values.probes.readiness.successThreshold }}
+            failureThreshold: {{ .Values.probes.readiness.failureThreshold }}      
           terminationMessagePath: /dev/termination-log
           name: {{ .Release.Name }}
           ports:
@@ -51,7 +51,7 @@ spec:
               value: {{ .Values.containers.containerPort | quote }}
           volumeMounts:
           - name: index-html
-            mountPath: /tmp/html
+            mountPath: {{ Values.volume.mount.path }}
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
   strategy:
