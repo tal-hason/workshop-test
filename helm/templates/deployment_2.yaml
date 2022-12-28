@@ -7,6 +7,8 @@ metadata:
 spec:
   replicas: {{ .Values.ReplicaNumber }}
   selector:
+    matchLabels:
+      app-2: user2-hello-chart-2
   template:
     metadata:
       annotations:
