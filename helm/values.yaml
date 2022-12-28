@@ -28,7 +28,7 @@ volume:
   mount:
     path: /tmp/html
 
-test: fail
+test: Healthy
 
 github:
   user: tal-hason
