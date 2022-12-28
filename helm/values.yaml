@@ -32,7 +32,7 @@ test: fail
 
 github:
   user: tal-hason
-  token: 
+  token: empty-pass
   url: https://api.github.com/repos/tal-hason/workshop-test/issues
 
 issue:
