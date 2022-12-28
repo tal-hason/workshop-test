@@ -14,7 +14,7 @@ spec:
         - secretRef:
             name: gh-details
         - configMapRef:
-            name: my-config-map
+            name: issue-message
         command: ["/bin/bash", "-c"]
         args: ["curl -u $USERNAME:$TOKEN -X POST -d '{\"title\":\"$ISSUE_TITLE\",\"body\":\"$ISSUE_BODY\"}' $URL"]
       restartPolicy: Never
