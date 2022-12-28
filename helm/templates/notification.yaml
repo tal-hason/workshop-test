@@ -12,12 +12,8 @@ spec:
       - name: github-issue
         image: registry.access.redhat.com/ubi8-minimal:8.7-1031
         env:
-          - name: MESSAGE
-            valueFrom:
-              configMapKeyRef:
-                name: issue-message
-                key: issue.json 
-            configMapKeyRef:
+        - name: ISSUE_DATA
+          value: '{"title":"Deployment sync Done","body":"The web site not Healty."}'
         envFrom:
         - secretRef:
             name: gh-details

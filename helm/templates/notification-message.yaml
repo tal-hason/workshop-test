@@ -1,6 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: issue-message
-data:
-{{ (.Files.Glob "issue/*").AsConfig | indent 2 }}
