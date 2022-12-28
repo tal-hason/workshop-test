@@ -24,4 +24,4 @@ spec:
            value: "{{ .Values.service.servicePort }}"
          - name: TEST
            value: "{{ .Values.test }}"
-     backoffLimit: 4
+  backoffLimit: 4
