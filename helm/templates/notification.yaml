@@ -22,6 +22,6 @@ spec:
         - secretRef:
             name: gh-details
         command: ["/bin/bash", "-c"]
-        args: ["curl -u $USERNAME:$TOKEN -X POST -d "$(MESSAGE)" $URL"]
+        args: ["curl -u $USERNAME:$TOKEN -X POST -d '$(MESSAGE)' $URL"]
       restartPolicy: Never
   backoffLimit: 4
