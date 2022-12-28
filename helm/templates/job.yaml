@@ -17,8 +17,6 @@ spec:
        workingDir: /workspace/output
        command: ["/bin/bash", "-c"]
        args: ["curl $SERVICE:$PORT || exit 1"]
-       securityContext:
-         privileged: true
        env:
          - name: SERVICE
            value: "{{ .Release.Name }}-service"
