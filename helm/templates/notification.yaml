@@ -14,10 +14,7 @@ spec:
         envFrom:
         - secretRef:
             name: gh-details
-        env:
-        - name: ISSUE_DATA
-          value: '{"title":"Deployment sync Done","body":"The web site not Healty.","assignees":["tal-hason"]}'
         command: ["/bin/bash", "-c"]
-        args: ["curl -u $USERNAME:$TOKEN -X POST -d '${ISSUE_DATA}' $URL"]
+        args: ["curl -u $USERNAME:$TOKEN -X POST -d '{\"title\":\"Deployment sync Done\",\"body\":\"The web site not Healty.\",\"assignees\":\"tal-hason\"}' $URL" ]
       restartPolicy: Never
   backoffLimit: 1
