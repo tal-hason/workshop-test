@@ -28,7 +28,7 @@ volume:
   mount:
     path: /tmp/html
 
-test: wow
+test: Healty
 
 github:
   user: tal-hason
