@@ -21,7 +21,7 @@ spec:
           terminationMessagePath: /dev/termination-log
           name: '{{ .name }}'
           ports:
-            - containerPort: '{{ .Values.containers.containerPort }}'
+            - containerPort: '{{ .containers.containerPort }}'
               protocol: TCP
           imagePullPolicy: Always
           terminationMessagePolicy: File
