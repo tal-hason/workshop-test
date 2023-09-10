@@ -1,4 +1,4 @@
-{{- range .Values.configMaps }}
+{{- range .Values.deploymnet }}
 kind: Deployment
 apiVersion: apps/v1
 metadata:
