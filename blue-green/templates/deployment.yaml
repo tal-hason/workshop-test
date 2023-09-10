@@ -1,37 +1,35 @@
 {{- range .Values.deploymnet }}
-kind: Deployment
 apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: '{{ .name }}'
+  labels:
+    app: bgd
+  name: bgd
 spec:
-  replicas: {{ .replicas }}
+  replicas: 1
   selector:
     matchLabels:
-      app: '{{ .name }}'
+      app: bgd
+  strategy: {}
   template:
     metadata:
       labels:
-        app: '{{ .name }}'
+        app: bgd
     spec:
       containers:
-        - resources: {}
-          env:
-          - name: COLOR
-            value: '{{ .color }}'
-          terminationMessagePath: /dev/termination-log
-          name: '{{ .name }}'
-          ports:
-            - containerPort: {{ .containers.containerPort }}
-              protocol: TCP
-          imagePullPolicy: Always
-          terminationMessagePolicy: File
-          image: 'quay.io/rhdevelopers/bgd:1.0.0'
-      restartPolicy: Always
-      terminationGracePeriodSeconds: 30
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 25%
-      maxSurge: 25%
-  revisionHistoryLimit: 10
+      - image: quay.io/rhdevelopers/bgd:1.0.0
+        name: bgd
+        env:
+        - name: COLOR
+          value: "blue"
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - ALL
+      securityContext:
+        runAsNonRoot: true
+        seccompProfile:
+          type: RuntimeDefault
 {{- end }}
