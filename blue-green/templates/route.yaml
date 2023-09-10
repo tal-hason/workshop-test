@@ -8,8 +8,7 @@ spec:
   port:
     targetPort: 8080
   to:
-  {{- with (index .Values.deploymnet 0) }}
-    kind: Service
-    name: {{ .name }}
-    weight: 100
-  {{- end }}
+  alternateBackends:
+  - kind: Service
+    name: user{n}-hello-world
+    weight: 10
