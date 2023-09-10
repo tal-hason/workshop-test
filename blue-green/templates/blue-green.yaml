@@ -8,6 +8,8 @@ spec:
   port:
     targetPort: 8080
   to:
+  {{- with (index .Values.deploymnet. 0) }}
     kind: Service
-    name: bgd
+    name: {{ .name }}
     weight: 100
+  {{- end }}
