@@ -8,6 +8,10 @@ spec:
   port:
     targetPort: 8080
   to:
+    kind: Service
+    name: blue-green
+    weight: 0
+
   alternateBackends:
   - kind: Service
     name: user{n}-hello-world
