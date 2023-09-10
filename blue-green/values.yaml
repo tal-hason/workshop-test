@@ -1,5 +1,5 @@
 deploymnet:
-  - name: blue
+  - name: bgd
     replicas: 1
     color: blue
     containers:
