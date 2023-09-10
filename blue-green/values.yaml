@@ -2,4 +2,5 @@ deploymnet:
   - name: blue
     replicas: 1
     color: blue
+    weight: 50
 

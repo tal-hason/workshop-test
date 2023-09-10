@@ -11,8 +11,8 @@ spec:
     kind: Service
     name: blue-green
     weight: 0
-
   alternateBackends:
+{{- range .Values.deployment }}
   - kind: Service
-    name: user{n}-hello-world
-    weight: 10
+    name: {{ .name }}
+    weight: {{ .weight }}
