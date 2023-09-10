@@ -1,27 +1,27 @@
----
+{{- range .Values.deployment }}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: bgd
-  name: bgd
+    app: {{ .name }}
+  name: {{ .name }}
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: bgd
+      app: {{ .name }}
   strategy: {}
   template:
     metadata:
       labels:
-        app: bgd
+        app: {{ .name }}
     spec:
       containers:
       - image: quay.io/rhdevelopers/bgd:1.0.0
-        name: bgd
+        name: {{ .name }}
         env:
         - name: COLOR
-          value: "blue"
+          value: {{ .color }}
         resources: {}
         securityContext:
           allowPrivilegeEscalation: false
@@ -32,4 +32,4 @@ spec:
         runAsNonRoot: true
         seccompProfile:
           type: RuntimeDefault
----
+{{ -end }}

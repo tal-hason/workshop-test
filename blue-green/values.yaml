@@ -1,6 +1,5 @@
 deploymnet:
-  - name: bgd
+  - name: blue
     replicas: 1
     color: blue
-    containers:
-      containerPort: 8080
+
