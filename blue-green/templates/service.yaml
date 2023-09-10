@@ -6,8 +6,8 @@ name: '{{ .name }}-service'
 spec:
 ports:
     - protocol: TCP
-    port: {{ .containers.containerPort }}
-    targetPort: {{ .containers.containerPort }}
+      port: {{ .containers.containerPort }}
+      targetPort: {{ .containers.containerPort }}
 selector:
     app: '{{ .name }}'
 {{- end }}
