@@ -2,12 +2,12 @@
 kind: Service
 apiVersion: v1
 metadata:
-name: '{{ .name }}-service'
+  name: '{{ .name }}-service'
 spec:
-ports:
+  ports:
     - protocol: TCP
       port: {{ .containers.containerPort }}
       targetPort: {{ .containers.containerPort }}
-selector:
-    app: '{{ .name }}'
+  selector:
+      app: '{{ .name }}'
 {{- end }}
