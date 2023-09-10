@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: blue-green
+  namespace: openshift-gitops
+spec:
+  destination:
+    namespace: blue-green
+    server: 'https://kubernetes.default.svc'
+  project: default
+  source:
+    path: blue-green
+    repoURL: 'https://github.com/tal-hason/workshop-test.git'
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+
