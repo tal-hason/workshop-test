@@ -1,0 +1,13 @@
+{{- range .Values.deploymnet }}
+kind: Service
+apiVersion: v1
+metadata:
+name: {{ .name }}-service
+spec:
+ports:
+    - protocol: TCP
+    port: {{ .containers.containerPort }}
+    targetPort: {{ .containers.containerPort }}
+selector:
+    app: {{ .name }}
+{{- end }}
