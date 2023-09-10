@@ -1,4 +1,4 @@
-deploymnet:
+deployment:
   - name: blue
     replicas: 1
     color: blue
