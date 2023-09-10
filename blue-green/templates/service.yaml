@@ -1,13 +1,15 @@
-{{- range .Values.deploymnet }}
-kind: Service
+---
 apiVersion: v1
+kind: Service
 metadata:
-  name: '{{ .name }}-service'
+  labels:
+    app: bgd
+  name: bgd
 spec:
   ports:
-    - protocol: TCP
-      port: {{ .containers.containerPort }}
-      targetPort: {{ .containers.containerPort }}
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
   selector:
-      app: '{{ .name }}'
-{{- end }}
+    app: bgd
+---
