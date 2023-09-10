@@ -5,6 +5,8 @@ metadata:
   annotations:
     haproxy.router.openshift.io/balance: random
 spec:
+  port:
+    targetPort: 8080
   to:
     kind: Service
     name: user1-hello-chart-service

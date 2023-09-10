@@ -16,7 +16,7 @@ spec:
       containers:
         - resources: {}
           env:
-            - name: color
+            - name: COLOR
               value: '{{ .color }}'
           terminationMessagePath: /dev/termination-log
           name: '{{ .name }}'
