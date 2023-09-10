@@ -25,7 +25,7 @@ spec:
               protocol: TCP
           imagePullPolicy: Always
           terminationMessagePolicy: File
-          image: '{{ .containers.image }}:{{ .containers.tag }}'
+          image: 'quay.io/rhdevelopers/bgd:1.0.0'
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
   strategy:

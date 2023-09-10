@@ -4,5 +4,3 @@ deploymnet:
     color: blue
     containers:
       containerPort: 8080
-      image: quay.io/rhdevelopers/bgd
-      tag: 1.0.0
