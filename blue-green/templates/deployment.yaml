@@ -4,7 +4,7 @@ apiVersion: apps/v1
 metadata:
   name: '{{ .name }}'
 spec:
-  replicas: '{{ .replicas }}'
+  replicas: {{ .replicas }}
   selector:
     matchLabels:
       app: '{{ .name }}'
