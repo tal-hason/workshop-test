@@ -1,4 +1,5 @@
 {{- range .Values.deployment }}
+---
 apiVersion: v1
 kind: Service
 metadata:
