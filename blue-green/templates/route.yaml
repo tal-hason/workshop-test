@@ -16,3 +16,4 @@ spec:
   - kind: Service
     name: {{ .name }}
     weight: {{ .weight }}
+{{- end }}
