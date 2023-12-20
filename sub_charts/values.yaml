@@ -1,36 +1,10 @@
-ReplicaNumber: 1
+ deploy: 
+  ReplicaNumber: 1
 
-containers:
-  containerPort: 8080
-  image: 'quay.io/argo-helm-workshop/workshop-app'
-  tag: 'chart_v2'
+  containers:
+    containerPort: 8080
+    image: 'quay.io/argo-helm-workshop/workshop-app'
+    tag: 'chart_v2'
 
-service:
-  servicePort: 8080
-
-probes:
-  readiness: 
-    path: /health/readiness
-    initialDelaySeconds: 1
-    timeoutSeconds: 1
-    periodSeconds: 10
-    successThreshold: 1
-    failureThreshold: 3
-  liveness:
-    path: /health/liveliness
-    initialDelaySeconds: 1
-    timeoutSeconds: 1
-    periodSeconds: 10
-    successThreshold: 1
-    failureThreshold: 3
-
-volume:
-  mount:
-    path: /tmp/html
-
-test: Healty
-
-github:
-  user: tal-hason
-  token: empty-pass
-  url: https://api.github.com/repos/tal-hason/workshop-test/issues
+  service:
+    servicePort: 8080
