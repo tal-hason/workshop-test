@@ -1,5 +1,7 @@
 FROM registry.access.redhat.com/ubi8/nodejs-16
 
+LABEL org.opencontainers.image.source=https://github.com/thason/workshop-test
+
 # Create app directory
 WORKDIR /tmp
 
