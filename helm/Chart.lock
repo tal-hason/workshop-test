@@ -1,0 +1,6 @@
+dependencies:
+- name: workshop-test
+  repository: oci://ghcr.io/tal-hason/helm
+  version: 1.0.0
+digest: sha256:bf7d1037d61a1132375f32a335179a221abe610407bdba41c4f60f61b2d75ba6
+generated: "2023-12-20T14:18:38.858508799Z"

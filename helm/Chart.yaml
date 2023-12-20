@@ -4,7 +4,7 @@ description: A Helm chart for Kubernetes
 type: application
 dependencies:
 - name: workshop-test
-  repository: oci://ghcr.io/tal-hason/helm/
+  repository: "oci://ghcr.io/tal-hason/helm"
   version: "1.0.0"
   alias: Deploy
 version: 1.0.0
