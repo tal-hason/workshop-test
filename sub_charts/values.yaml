@@ -32,4 +32,4 @@ deploy2:
 # argocd.syncwave.deployment
 
 ---
-test: Healthy
+test: Healty
