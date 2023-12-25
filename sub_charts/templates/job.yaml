@@ -18,10 +18,10 @@ spec:
        command: ["/bin/bash", "-c"]
        args: ["curl $SERVICE:$PORT/health/liveliness | grep $TEST || exit 1"]
        env:
-         - name: TEST
-           value: "{{ .Values.test }}"
-         - name: SERVICE
-           value: "deploy-service"
-         - name: PORT
-           value: "{{ .Values.deploy.service.servicePort }}"
+        - name: TEST
+          value: "{{ .Values.test }}"
+        - name: SERVICE
+          value: "deploy-service"
+        - name: PORT
+          value: "{{ .Values.deploy.service.servicePort }}"
   backoffLimit: 1
