@@ -19,7 +19,7 @@ spec:
        args: ["curl ${SERVICE}:${PORT}/health/liveliness || exit 1"]
        env:
          - name: SERVICE
-           value: "{{ .Chart.Name }}-service"
+           value: "deploy-service"
          - name: PORT
            value: "{{ .Values.deploy.service.servicePort }}"
   backoffLimit: 1
