@@ -1,26 +1,26 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: {{ .Release.Name }}
+  name: {{ .Chart.Name }}
   annotations:
     argocd.argoproj.io/sync-wave: "5"
 spec:
   replicas: {{ .Values.ReplicaNumber }}
   selector:
     matchLabels:
-      app: "{{ .Release.Name }}"
+      app: "{{ .Chart.Name }}"
   template:
     metadata:
       annotations:
         checksum/config: {{ include (print $.Template.BasePath "/ConfigMap.yaml") . | sha256sum }}
 #        rollme: {{ randAlphaNum 5 | quote }}  sulotion for l3 p1 t 2
       labels:
-        app: "{{ .Release.Name }}"
+        app: "{{ .Chart.Name }}"
     spec:
       volumes:
         - name: index-html
           configMap:
-            name: {{ .Release.Name }}-html
+            name: {{ .Chart.Name }}-html
             defaultMode: 420
       containers:
         - resources: {}
@@ -45,7 +45,7 @@ spec:
             successThreshold: {{ .Values.probes.readiness.successThreshold }}
             failureThreshold: {{ .Values.probes.readiness.failureThreshold }}      
           terminationMessagePath: /dev/termination-log
-          name: {{ .Release.Name }}
+          name: {{ .Chart.Name }}
           ports:
             - containerPort: {{ .Values.containers.containerPort }}
               protocol: TCP
