@@ -13,7 +13,7 @@
     syncwave:
       deployment: 5
       configmap: 1
-
+---
 deploy2: 
   ReplicaNumber: 1
 
@@ -30,3 +30,6 @@ deploy2:
       deployment: 10
       configmap: 1
 # argocd.syncwave.deployment
+
+
+test: Healthy
