@@ -28,3 +28,4 @@ deploy2:
     syncwave:
       deployment: "10"
 
+# argocd.syncwave.deployment
