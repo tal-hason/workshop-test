@@ -5,7 +5,7 @@ type: application
 dependencies:
 - name: workshop-test
   repository: "oci://ghcr.io/tal-hason/helm"
-  version: 1.0.7
+  version: 1.0.8
   alias: deploy
 - name: workshop-test
   repository: "oci://ghcr.io/tal-hason/helm"
