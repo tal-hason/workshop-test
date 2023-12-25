@@ -3,7 +3,7 @@ apiVersion: apps/v1
 metadata:
   name: {{ .Chart.Name }}
   annotations:
-    argocd.argoproj.io/sync-wave: {{ .Values.argcd.syncwave.deployemnt }}
+    argocd.argoproj.io/sync-wave: {{ .Values.argcd.syncwave.deplyment }}
 spec:
   replicas: {{ .Values.ReplicaNumber }}
   selector:
