@@ -31,5 +31,5 @@ deploy2:
       configmap: 1
 # argocd.syncwave.deployment
 
-
+---
 test: Healthy
