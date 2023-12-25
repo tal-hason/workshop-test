@@ -1,4 +1,6 @@
- deploy: 
+test: Healty
+---
+deploy: 
   ReplicaNumber: 1
 
   containers:
@@ -31,5 +33,3 @@ deploy2:
       configmap: 1
 # argocd.syncwave.deployment
 
----
-test: Healty
