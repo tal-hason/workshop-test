@@ -8,6 +8,10 @@ containers:
 service:
   servicePort: 8080
 
+argocd:
+  syncwave: 
+    deployment: "5"
+
 probes:
   readiness: 
     path: /health/readiness
