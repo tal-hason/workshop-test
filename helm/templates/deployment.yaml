@@ -20,7 +20,7 @@ spec:
       volumes:
         - name: index-html
           configMap:
-            name: index.html
+            name: {{ .Release.Name }}-html
             defaultMode: 420
       containers:
         - resources: {}
