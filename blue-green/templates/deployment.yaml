@@ -5,6 +5,7 @@ kind: Deployment
 metadata:
   labels:
     app: {{ .name }}
+    helm/Release: {{ $.Release.Name }}
   name: {{ .name }}
 spec:
   replicas: 1
